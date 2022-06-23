@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components';
+import ProductList from './components/ProductList';
+import CartList from './components/CartList';
+import CartState from './components/CartContext';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Root = styled.div`
+  margin: 20px 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+`;
+
+export default function App() {
+    return (
+        <CartState>
+            <Root>
+                <ProductList/>
+                <CartList/>
+            </Root>
+        </CartState>
+    );
 }
-
-export default App;

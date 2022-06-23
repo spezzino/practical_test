@@ -1,4 +1,10 @@
-const products = [
+export interface Product {
+    name: string;
+    price: number;
+    qty?: number;
+}
+
+export const products: Array<Product> = [
     {
         name: "Sledgehammer",
         price: 125.75
@@ -11,7 +17,7 @@ const products = [
         name: "Bandsaw",
         price: 562.13
     }, {
-        name: "Chisel"
+        name: "Chisel",
         price: 12.9
     },
     {
